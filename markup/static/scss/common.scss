@@ -1,0 +1,755 @@
+// Common styles of the project
+
+html, body {
+    min-width: 1024px;
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    font-size: $basic-font-size;
+    font-family: $glober;
+
+    @include respond-to(desktop) {
+        font-size: 9px;
+    }
+}
+
+html, body,
+p, h1, h2, h3, h4, h5,
+ol, ul,
+input, button, textarea {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: $font-black;
+    //text-rendering: optimizeLegibility;
+    //-webkit-font-smoothing: antialiased;
+    //-moz-osx-font-smoothing: grayscale;
+}
+
+.l-grid {
+    overflow: hidden;
+
+    &__header,
+    &__footer,
+    &__filter {
+        position: relative;
+        min-width: 1024px;
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+
+        @include respond-to(desktop) {
+            min-width: auto;
+        }
+    }
+
+    &__gallery {
+        @include cf();
+
+        padding-bottom: 40px;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    &__content {
+        @include cf();
+
+        width: 1024px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 5;
+
+        @include respond-to(desktop) {
+            width: 900px;
+            padding: 0 40px;
+        }
+
+        &--question {
+            margin: 40px 0;
+            padding: 50px 80px;
+            background-color: $white;
+            border-radius: 5px;
+        }
+    }
+
+    &__tool-list {
+        @include cf();
+
+        height: 40px;
+    }
+
+    &__judges {
+        padding: 40px 0;
+    }
+}
+
+.c-aside {
+    width: 300px;
+    float: left;
+
+    @include respond-to(desktop) {
+        width: 280px;
+    }
+
+    &__block {
+        margin-bottom: 30px;
+        border-radius: 5px;
+        background-color: $white;
+    }
+
+    &__profile-img {
+        margin-top: -125px;
+        background: 0;
+        padding: 0;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 5px;
+
+        @include respond-to(desktop) {
+            height: 280px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__graph {
+        background: 0;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__comments {
+        padding: 20px;
+        position: relative;
+    }
+}
+
+.c-timeline {
+    width: 690px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 40px;
+    padding-bottom: 40px;
+
+    @include respond-to(desktop) {
+        width: 600px;
+        margin-left: 20px;
+    }
+
+    &__block {
+        padding: 15px 30px;
+        border-radius: 5px;
+        background-color: $white;
+        position: relative;
+
+        &:not(:first-child) {
+            margin-top: 30px;
+        }
+
+        &--special,
+        &--first {
+            .c-timeline__content {
+                @include cf();
+            }
+
+            .c-timeline__photo-item {
+                float: left;
+            }
+
+            .c-timeline__text,
+            .c-timeline__title,
+            .c-timeline__date {
+                color: $white;
+            }
+
+            .c-timeline__text {
+                float: left;
+                width: 470px;
+                margin-left: 15px;
+                margin-right: 0;
+
+                @include respond-to(desktop) {
+                    width: 380px;
+                }
+            }
+        }
+
+        &--special {
+            background-image: url("%=static=%general/special_bg.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        &--first {
+            background-image: url("%=static=%general/first_bg.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        &--empty {
+            .c-timeline__text {
+                color: $red;
+                font-size: 2.9rem;
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: 900;
+                font-style: italic;
+                padding: 100px 0 120px;
+                width: 100%;
+            }
+        }
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-size: 2.9rem;
+        font-style: italic;
+        font-weight: 900;
+    }
+
+    &__date {
+        font-size: 1.3rem;
+        position: absolute;
+        top: 25px;
+        right: 15px;
+    }
+
+    &__content {
+        margin-top: 20px;
+    }
+
+    &__photo-list {
+        @include cf();
+        @include nl();
+
+        margin-bottom: 15px;
+    }
+
+    &__photo-item {
+        width: 140px;
+        height: 130px;
+        overflow: hidden;
+        float: left;
+
+        &:not(:first-child) {
+            margin-left: 40px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    }
+
+    &__text {
+        display: inline-block;
+        vertical-align: middle;
+        width: 530px;
+        margin-right: 20px;
+        font-size: 1.6rem;
+
+        @include respond-to(desktop) {
+            width: 460px;
+        }
+
+        p {
+            margin-top: 5px;
+        }
+    }
+
+    &__points {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 2.7rem;
+        font-weight: 900;
+        line-height: 1;
+        font-style: italic;
+        text-align: center;
+
+        span {
+            display: block;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.c-page-title {
+    position: relative;
+    overflow: hidden;
+    background-image: url('%=static=%general/page_title_bg_no_strips.jpg');
+    background-size: cover;
+
+    //&__bg {
+    //    position: absolute;
+    //    height: 100%;
+    //    width: auto;
+    //    min-width: 100%;
+    //    left: 50%;
+    //    transform: translateX(-50%);
+    //}
+
+    &__text {
+        padding: 50px 0 60px;
+        color: $white;
+        text-align: center;
+        font-style: italic;
+        font-weight: 900;
+        font-size: 4.2rem;
+        text-transform: uppercase;
+
+        span {
+            font-size: 5.2rem;
+            display: block;
+        }
+    }
+}
+
+.c-head-profile {
+    @include cf();
+
+    padding-bottom: 20px;
+    color: $white;
+    float: right;
+    width: 690px;
+
+    @include respond-to(desktop) {
+        width: 600px;
+    }
+
+    &__info {
+        float: left;
+        width: 410px;
+
+        @include respond-to(desktop) {
+            width: 360px;
+        }
+    }
+
+    &__name {
+        font-size: 2.3rem;
+        font-style: italic;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+
+    &__age-location {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    &__points {
+        float: right;
+    }
+
+    &__points-week,
+    &__points-total {
+        font-size: 2.3rem;
+        font-style: italic;
+        font-weight: 900;
+        text-transform: uppercase;
+
+        span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-style: normal;
+            margin-left: 5px;
+        }
+    }
+
+    &__points-total {
+        margin-top: 10px;
+    }
+}
+
+.c-tool-list {
+    @include cf();
+    @include nl();
+
+    float: right;
+    height: 40px;
+
+    &__item {
+        float: left;
+        margin-right: 75px;
+    }
+
+    &__link {
+        display: block;
+        color: $font-black;
+        text-decoration: none;
+        height: 40px;
+        line-height: 45px;
+        font-size: 1.9rem;
+    }
+}
+
+.c-graph {
+    padding: 10px 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: $white;
+
+    &__total {
+        display: none;
+    }
+
+    &__link-list {
+        @include nl();
+        @include cf();
+    }
+
+    &__link-item {
+        background-color: $white;
+        width: 49%;
+        float: left;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+
+        &:last-child {
+            float: right;
+        }
+    }
+
+    &__link {
+        height: 20px;
+        line-height: 20px;
+        text-decoration: none;
+        color: $font-black;
+        text-align: center;
+        display: block;
+        font-size: 1.2rem;
+
+        &--active {
+            font-weight: bold;
+        }
+    }
+}
+
+.c-comment {
+    &:not(:first-child) {
+        margin-top: 30px;
+    }
+
+    &--important {
+        .c-comment__author-name {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+    }
+
+    &__author {
+        @include cf();
+    }
+
+    &__author-img {
+        float: left;
+
+        img {
+            border-radius: 5px;
+        }
+    }
+
+    &__author-info {
+        float: left;
+        margin-left: 10px;
+    }
+
+    &__author-name {
+        font-size: 1.2rem;
+        font-weight: 900;
+        margin-top: 5px;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        margin-top: 10px;
+    }
+}
+
+.c-more {
+    margin: 60px 0;
+    text-align: center;
+
+    &--aside {
+        position: absolute;
+        margin: 0;
+        bottom: -60px;
+        left: 0;
+        width: 100%;
+
+        .c-more__link {
+            width: 25px;
+            height: 15px;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        width: 30px;
+        height: 20px;
+        background-image: url("%=static=%general/arrow_down_black.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+.c-judges {
+    @include cf();
+    background-color: #303f62;
+    color: $white;
+    padding: 40px;
+    background-image: url('%=static=%/general/judges_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:not(:first-child) {
+        margin-top: 40px;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        margin-top: 10px;
+    }
+
+    &__img {
+        float: left;
+        margin-right: 5%;
+        width: 310px;
+        height: auto;
+
+        @include respond-to(desktop) {
+           width: 30%;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__info {
+        float: left;
+        width: 585px;
+        box-sizing: border-box;
+
+        @include respond-to(desktop) {
+           width: 65%;
+        }
+    }
+
+    &__title-name {
+        background-color: #ff4700;
+        transform: skewX(-30grad);
+        padding: 15px 20px;
+        font-weight: bold;
+        display: inline-block;
+        margin-left: 15px;
+        margin-bottom: 20px;
+        // font-style: italic;
+
+    }
+
+    &__title-text {
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        transform: skewX(30grad);
+    }
+
+    &__subtitle {
+        text-transform: uppercase;
+        margin-top: 10px;
+        font-size: 1.6rem;
+    }
+
+    &__quote {
+        margin-top: 20px;
+        font-size: 1.4rem;
+    }
+
+    &__blockquote {
+
+        &:before {
+            content: '';
+            display:inline-block;
+            width: 37px;
+            height: 27px;
+            background-image: url('%=static=%general/quote-judges.png');
+            background-repeat: no-repeat;
+            margin-right: 10px;
+        }
+    }
+}
+
+.c-form {
+    &__row {
+        @include cf();
+        margin-top: 40px;
+    }
+
+    &__label {
+        padding: 0 20px;
+        font-size: 1.6rem;
+    }
+
+    &__input-block {
+        margin-top: 10px;
+
+        &--name {
+            @include cf();
+        }
+
+        &--email {
+            width: 460px;
+        }
+
+        &--select {
+            position: relative;
+            width: 370px;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 17px;
+                right: 16px;
+                width: 10px;
+                height: 6px;
+                background-image: url('%=static=%general/arrow_down_white.png');
+                background-repeat: no-repeat;
+                background-position: 0 0;
+            }
+        }
+
+        &--textarea {
+            width: 760px;
+        }
+    }
+
+    &__textarea {
+        width: 100%;
+        box-sizing: border-box;
+        display: block;
+        height: 150px;
+        background-color: $blue;
+        border: 0;
+        resize: none;
+        border-radius: 20px;
+        font-size: 1.6rem;
+        line-height: 1.4;
+        color: $white;
+        padding: 15px 20px;
+        outline: none;
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        font-size: 1.6rem;
+        border: 0;
+        background-color: $blue;
+        border-radius: 20px;
+        color: $white;
+        outline: none;
+
+        &--name {
+            width: 260px;
+            float: left;
+        }
+
+        &--age {
+            width: 65px;
+            text-align: center;
+        }
+    }
+
+    &__select {
+        width: 370px;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        font-size: 1.6rem;
+        -webkit-appearance: none;
+        border: 0;
+        background-color: $blue;
+        border-radius: 20px;
+        color: $white;
+        outline: none;
+        cursor: pointer;
+    }
+
+    &__checkbox {
+        display: none;
+        outline: none;
+
+        &:checked + .c-form__checkbox-label:after {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background-color: $blue;
+            position: absolute;
+            top: 4px;
+            left: 7px;
+        }
+    }
+
+    &__checkbox-label {
+        font-size: 1.6rem;
+        padding-left: 30px;
+        position: relative;
+        display: block;
+
+        &:before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            border: 5px solid $blue;
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+            top: -3px;
+        }
+    }
+
+    &__hint {
+        color: $font-grey;
+        float: left;
+        margin-left: 20px;
+        font-size: 1.3rem;
+        padding-top: 8px;
+    }
+
+    &__submit-block {
+        background-color: $blue;
+        float: left;
+        transform: skew(-30deg);
+        font-weight: 900;
+        margin-right: 20px;
+    }
+
+    &__submit {
+        color: $white;
+        transform: skew(10deg);
+        padding: 15px 40px 10px;
+        text-transform: uppercase;
+        border: 0;
+        background: 0;
+        display: block;
+        font-size: 2rem;
+    }
+}
