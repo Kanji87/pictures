@@ -2,8 +2,6 @@ doctype html
 html(class="no-js", lang="ru")
 
     include ../components/head/head.pug
-    include ../components/header/header.pug
-    include ../components/nav/nav.pug
     include ../components/footer/footer.pug
 
     head
@@ -12,173 +10,20 @@ html(class="no-js", lang="ru")
         |%=symbols=%
 
         .l-grid
+            h1.title This is just a PS4 gamepad
 
-            +header()
-
-            +nav()
-
-            .c-page-title
-                .bg-strips
-                //img.c-page-title__bg(src='%=static=%images/general/page_title_bg.jpg')
-                .l-grid__content
-                    h1.c-page-title__text Дневник трансформации
-                    .c-head-profile
-                        .c-head-profile__info
-                            p.c-head-profile__name Александр Карелин
-                            p.c-head-profile__age-location 30 лет, Нижний Новгород
-
-                        .c-head-profile__points
-                            .c-head-profile__points-week
-                                | За неделю: 25
-                                span поинтов
-
-                            .c-head-profile__points-total
-                                | Всего: 120
-                                span поинтов
-
-            .l-grid__content.l-grid__tool-list
-                ul.c-tool-list
-                    li.c-tool-list__item
-                        a.c-tool-list__link(href='#') Активировать поинты
-
-                    li.c-tool-list__item
-                        a.c-tool-list__link(href='#') Редактировать
-
-                    li.c-tool-list__item
-                        a.c-tool-list__link(href='#') Настройки
-
-            .bg-grey
-                .bg-strips
-                section.l-grid__content
-                    .c-aside
-                        .c-aside__block
-                            .c-aside__profile-img
-                                img(src='http://lorempixel.com/240/340/sports/')
-
-                        .c-aside__block.c-aside__graph
-                            .c-graph.c-graph__week
-                                img(src='%=static=%images/content/graph.jpg')
-                            .c-graph.c-graph__total
-                                img(src='http://lorempixel.com/260/130/cats/')
-                            ul.c-graph__link-list
-                                li.c-graph__link-item
-                                    a.c-graph__link.c-graph__link--active.js-graph-week(href='#') недельный прогресс
-                                li.c-graph__link-item
-                                    a.c-graph__link.js-graph-total(href='#') тотальный прогресс
-
-                        .c-aside__block.c-aside__comments
-                            .c-comment.c-comment--important
-                                .c-comment__author
-                                    .c-comment__author-img
-                                        img(src='http://lorempixel.com/57/57/sports/')
-                                    .c-comment__author-info
-                                        p.c-comment__author-name Роман Грищенко
-                                        p.c-comment__author-status атлет
-                                p.c-comment__text Все хорошо,продолжайте в том же духе
-
-                            .c-comment
-                                .c-comment__author
-                                    .c-comment__author-img
-                                        img(src='http://lorempixel.com/57/57/sports/')
-                                    .c-comment__author-info
-                                        p.c-comment__author-name Владимир
-                                        p.c-comment__author-status болельщик
-                                p.c-comment__text !!!!!!!!!!!!!!! молодец !!!!!!!!!!!!!!
-
-                            .c-comment
-                                .c-comment__author
-                                    .c-comment__author-img
-                                        img(src='http://lorempixel.com/57/57/sports/')
-                                    .c-comment__author-info
-                                        p.c-comment__author-name Сергей
-                                        p.c-comment__author-status болельщик
-                                p.c-comment__text Мог и лучше
-
-                            .c-comment
-                                .c-comment__author
-                                    .c-comment__author-img
-                                        img(src='http://lorempixel.com/57/57/sports/')
-                                    .c-comment__author-info
-                                        p.c-comment__author-name Сергей
-                                        p.c-comment__author-status участник (250 поинтов)
-                                p.c-comment__text Молодец, на этой неделе хорошо постарался
-
-                            .c-more.c-more--aside
-                                a.c-more__link(href='#')
-                    .c-timeline
-                        .c-timeline__block
-                            .c-timeline__head
-                                .c-timeline__title Неделя 5
-                                .c-timeline__date 25.03-1.04
-                                .c-timeline__content
-                                    ul.c-timeline__photo-list
-                                        li.c-timeline__photo-item
-                                            img(src='http://lorempixel.com/137/127/sports/1')
-                                        li.c-timeline__photo-item
-                                            img(src='http://lorempixel.com/137/127/sports/2')
-                                        li.c-timeline__photo-item
-                                            img(src='http://lorempixel.com/137/127/sports/3')
-
-                                    .c-timeline__text
-                                        p Жюри +5 поинтов
-                                        p Пользователи + 20 поинтов
-                                        p Активность + 5 поинтов
-                                        p Хэштег +4 поинтов
-                                        p Болейщики + 5 поинтов
-                                    .c-timeline__points
-                                        | +39
-                                        span поинтов
-
-                        .c-timeline__block.c-timeline__block--special
-                            .c-timeline__head
-                                .c-timeline__title #siberianprogress
-                                .c-timeline__date 25.03-1.04
-                            .c-timeline__content
-                                .c-timeline__photo-item
-                                    img(src='http://lorempixel.com/137/127/sports/')
-                                p.c-timeline__text я за 4 недель набрал 2 кг мышечной массы - так держать мне
-
-                        .c-timeline__block.c-timeline__block--empty
-                            .c-timeline__head
-                                .c-timeline__title Неделя 5
-                                .c-timeline__date 25.03-1.04
-                            .c-timeline__content
-                                p.c-timeline__text Неделя без тренировок
-
-                        .c-timeline__block
-                            .c-timeline__head
-                                .c-timeline__title Неделя 5
-                                .c-timeline__date 25.03-1.04
-                            .c-timeline__content
-                                ul.c-timeline__photo-list
-                                    li.c-timeline__photo-item
-                                        img(src='http://lorempixel.com/137/127/sports/1')
-                                    li.c-timeline__photo-item
-                                        img(src='http://lorempixel.com/137/127/sports/2')
-                                    li.c-timeline__photo-item
-                                        img(src='http://lorempixel.com/137/127/sports/3')
-                                .c-timeline__text
-                                    p Жюри +5 поинтов
-                                    p Пользователи + 20 поинтов
-                                    p Активность + 5 поинтов
-                                    p Хэштег +4 поинтов
-                                    p Болейщики + 5 поинтов
-                                .c-timeline__points
-                                    | +39
-                                    span поинтов
-
-                        .c-more
-                            a.c-more__link(href='#')
-
-                        .c-timeline__block.c-timeline__block--first
-                            .c-timeline__head
-                                .c-timeline__title #даюслово
-                                .c-timeline__date 23.01
-                            .c-timeline__content
-                                .c-timeline__photo-item
-                                    img(src='http://lorempixel.com/137/127/sports/')
-                                p.c-timeline__text я за 4 недель набрал 2 кг мышечной массы - так держать мне
-
-            +nav()
+            .dualshock
+                .dualshock__horn.dualshock__horn--left
+                    .dualshock__shift.dualshock__shift--left
+                        .dualshock__trigger
+                .dualshock__middle-path
+                    .dualshock__button-circle.dualshock__button-circle--left
+                    .dualshock__stick-circle.dualshock__stick-circle--left
+                    .dualshock__touchpad
+                    .dualshock__button-circle.dualshock__button-circle--right
+                    .dualshock__stick-circle.dualshock__stick-circle--right
+                .dualshock__horn.dualshock__horn--right
+                    .dualshock__shift.dualshock__shift--right
+                        .dualshock__trigger
 
             +footer()

@@ -8,7 +8,7 @@ html, body {
 
 html {
     font-size: $basic-font-size;
-    font-family: $glober;
+    font-family: $font-family;
 
     @include respond-to(desktop) {
         font-size: 9px;
@@ -24,7 +24,8 @@ input, button, textarea {
 }
 
 body {
-    color: $font-black;
+    color: $black;
+    background-color: #eeeeee;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -33,4 +34,133 @@ body {
 .l-grid {
     width: $hd;
     margin: 0 auto;
+}
+
+.title {
+    font-size: 5rem;
+    text-align: center;
+    padding: 100px 0;
+    font-weight: normal;
+}
+
+.dualshock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &__horn {
+        width: 180px;
+        height: 450px;
+        background-color: $gamepad;
+        position: absolute;
+        border-radius: 45%;
+        z-index: 40;
+
+        &--left {
+            top: -5px;
+            left: -125px;
+            transform: rotate(12deg);
+        }
+
+        &--right {
+            top: -5px;
+            right: -125px;
+            transform: rotate(-12deg);
+        }
+    }
+
+    &__middle-path {
+        width: 400px;
+        height: 250px;
+        background-color: $gamepad;
+        position: relative;
+        z-index: 50;
+    }
+
+    &__shift {
+        border-bottom: 20px solid $shift;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        height: 0;
+        width: 90px;
+        position: absolute;
+        top: -5px;
+        z-index: -10;
+
+        &--left {
+            left: 40px;
+            transform: rotate(-12deg);
+        }
+
+        &--right {
+            right: 40px;
+            transform: rotate(12deg);
+        }
+    }
+
+    &__trigger {
+        width: 90%;
+        margin: -4px auto 0;
+        height: 5px;
+        background-color: $trigger;
+        border-radius: 10px;
+    }
+
+    &__touchpad {
+        position: absolute;
+        width: 210px;
+        height: 130px;
+        left: 50%;
+        margin-left: -105px;
+        background-color: $touchpad;
+        border-radius: 10px;
+        top: -2px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background-color: #000;
+            z-index: -1;
+            border-radius: 10px;
+        }
+    }
+
+    &__button-circle {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        top: 40px;
+        background-color: $circle;
+        border-radius: 100%;
+
+        &--left {
+            left: -80px;
+        }
+
+        &--right {
+            right: -80px;
+        }
+    }
+
+    &__stick-circle {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        bottom: -20px;
+        background-color: $circle;
+        border-radius: 100%;
+
+        &--left {
+            left: 50px;
+        }
+
+        &--right {
+            right: 50px;
+        }
+    }
 }
